@@ -102,30 +102,47 @@ for (let word of sentences) {
 
 //Задание 12
 // Выведите сумму всех элементов массива используя цикл for..of. Массив numbers объявлен в Задании 7
-const numbers = [1, 2, 3, 4, 5];
+
+/* const numbers = [1, 2, 3, 4, 5];
 let sum = 0;
 for (number of numbers) {
   sum += number;
 }
 console.log(sum);
+ */
 
 //Задание 13
 // Выведите длину каждого слова из массива строк в консоль
-const list = ["apple", "banana", "cherry"];
+
+/* const list = ["apple", "banana", "cherry"];
+for (let item of list) {
+  console.log(item.length);
+} */
 
 //Задание 14
 // Преобразуйте массив каждый элемент массива words в верхний регистр
+/* const words = ["Hello", "world", "!"];
+for (let word of words) {
+  console.log(word.toUpperCase());
+} */
 
 //Задание 15
 // Подсчитайте количество гласных букв в строке
 // Подсказка: вам понадобится метод includes
+
 const greeting = "Hello, world!";
 let vowelCount = 0;
 const vowels = ["a", "e", "i", "o", "u"];
 
+for (let vowel of greeting) {
+  if (vowels.includes(vowel)) {
+    console.log(vowelCount);
+  }
+}
+
 //Задание 16
 // Объедините все строки массива в одну строку с пробелами между ними
-const words = ["Hello", "world", "!"];
+//const words = ["Hello", "world", "!"];
 
 //Задание 17
 // Выведите числа от 1 до 10 в консоль используя цикл while

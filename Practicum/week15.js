@@ -209,11 +209,32 @@ do {
 //Задание 22
 // Запросить у пользователя числа, пока сумма введенных чисел не станет больше 100
 
+/* let sum = 0;
+do {
+  let num = +prompt("введите число:");
+  sum += num;
+} while (sum <= 100);
+console.log(`Сумма введенных чисел больше 100`); */
+
 //Задание 23
 // Напишите функцию, которая изменит фоновый цвет всех элементов <h4> на странице на синий цвет
+
+/* const titles = document.querySelectorAll("h4");
+console.log(titles);
+for (let title of titles) {
+  title.classList.add("title-color");
+} */
 
 //Задание 24
 // Напишите генератор случайных строк до 6 символов
 // Подсказка: используйте методы объекта Math и длину массива alphabet
-let alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+/* let alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 let randomString = "";
+let maxLenght = 6;
+
+do {
+  let randomIndex = Math.floor(Math.random() * alphabet.length);
+  randomString += alphabet[randomIndex];
+} while (randomString.length < maxLenght);
+console.log(randomString);
+ */

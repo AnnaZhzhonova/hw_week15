@@ -130,38 +130,81 @@ for (let word of words) {
 // Подсчитайте количество гласных букв в строке
 // Подсказка: вам понадобится метод includes
 
-const greeting = "Hello, world!";
+/* const greeting = "Hello, world!";
 let vowelCount = 0;
 const vowels = ["a", "e", "i", "o", "u"];
 
-for (let vowel of greeting) {
-  if (vowels.includes(vowel)) {
-    console.log(vowelCount);
+for (let letter of greeting) {
+  if (vowels.includes(letter)) {
+    vowelCount++;
   }
 }
+console.log(vowelCount); */
 
 //Задание 16
 // Объедините все строки массива в одну строку с пробелами между ними
-//const words = ["Hello", "world", "!"];
+
+/* const words = ["Hello", "world", "!"];
+const newStr = words.join(" ");
+console.log(newStr);
+ */
 
 //Задание 17
 // Выведите числа от 1 до 10 в консоль используя цикл while
 
+/* let i = 1;
+while (i <= 10) {
+  console.log(i);
+  i++;
+} */
+
 //Задание 18
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
+
+/* let i = 10;
+while (i >= 1) {
+  console.log(i);
+  i--;
+} */
 
 //Задание 19
 // Проверьте, все ли элементы массива являются положительными числами используя цикл while
 // Подсказка: используйте директиву break
-const allNumbers = [1, 2, 3, -4, 5];
+
+/* const allNumbers = [1, 2, 3, -4, 5];
 let allPositive = true;
+for (let number of allNumbers) {
+  if (number <= 0) {
+    console.log("массив содержит отрицательные числа");
+    break;
+  }
+  number++;
+} */
 
 //Задание 20
 // Выведите значения элементов массива до первого отрицательного числа используя цикл do...while
+
+/*
 const random = [2, 4, 6, -3, 8, 10];
+let i = 0;
+
+do {
+  console.log(random[i]);
+  i++;
+} while (random[i] >= 0);
+ */
 
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
+
+/* let number = 1;
+
+do {
+  if (number % 3 !== 0)
+    console.log(number);
+    number++
+} while (number <= 100);
+ */
 
 //Задание 22
 // Запросить у пользователя числа, пока сумма введенных чисел не станет больше 100

@@ -11,8 +11,8 @@ for (let city of cities) {
   citiesList.append(cityItem);
 }
 
-let minimum = -Infinity;
-let maximum = Infinity;
+let minimum = Infinity;
+let maximum = -Infinity;
 
 for (let i = 0; i < temperatures.length; i++) {
   const temp = temperatures[i];
@@ -25,7 +25,6 @@ for (let i = 0; i < temperatures.length; i++) {
     maximum = temp;
   }
 }
-console.log(minimum);
 
 const minTemp = document.createElement("p");
 const maxTemp = document.createElement("p");

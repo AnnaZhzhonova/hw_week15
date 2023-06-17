@@ -37,12 +37,13 @@ body {
 }
 .form-btn {
   position: absolute;
-  right: 11px;
+  right: 10px;
   top: 1px;
   width: 70px;
   height: 48px;
   border: none;
   border-radius: 2px 15px 15px 2px;
+  background-color: #77d27d;
 }
 .form-checkbox {
   margin: 10px 0;
@@ -50,25 +51,36 @@ body {
 .form-checkbox__label {
   padding: 10px 5px;
 }
-
-.task-list {
+.task-container {
   margin: 0 auto;
   padding: 0 10px;
   width: 90%;
 }
 .task-list {
   list-style-type: none;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 90%;
 }
-.task-list__item {
-  display: flex;
-  margin: 15px 0;
-  border: 1px solid #77d27d;
-}
+
+.task-list__item,
 .task-list__item--urgent {
   display: flex;
   margin: 15px 0;
+  padding: 0 15px;
+  border-radius: 15px;
+  border: 1px solid #77d27d;
+}
+.task-list__item--urgent {
   border: 1px solid #ee1e1e;
 }
 .task-list__text {
   padding: 0 20px;
+}
+.remove-btn {
+  height: 30px;
+  background-color: white;
+  border: 1px solid #b6bdd0;
+  border-radius: 15px;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 }

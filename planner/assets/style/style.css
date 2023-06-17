@@ -52,9 +52,17 @@ body {
   padding: 10px 5px;
 }
 .task-container {
+  min-height: 200px;
   margin: 0 auto;
   padding: 0 10px;
   width: 90%;
+}
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #b6bdd0;
 }
 .task-list {
   list-style-type: none;

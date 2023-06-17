@@ -4,6 +4,7 @@ const taskBtn = document.querySelector(".form-btn");
 const taskCheckbox = document.querySelector(".form-checkbox");
 const taskList = document.querySelector(".task-list");
 const removeBtn = document.querySelector(".remove-btn");
+const notification = document.querySelector(".notification");
 
 //проверить срочность
 function checkUrgency(checkbox, item) {
@@ -51,6 +52,7 @@ function addNewTask(parent, checkbox, text) {
   if (clearInputValue) {
     createTask(parent, checkbox, clearInputValue);
   }
+  notification.remove();
 }
 //чекбокс для таски
 function changeStatus(checkbox, text) {
@@ -69,10 +71,11 @@ taskBtn.addEventListener("click", (event) => {
 });
 
 //Кнопка очистки
-/* function cleanList(parent, btn) {
-  if (parent.innerHTML) {
-    btn.setAttribute("disabled");
+function cleanList(parent, btn) {
+  if (!parent.innerHTML) {
+    btn.setAttribute("disabled", "disabled");
+  } else {
+    btn;
   }
 }
 cleanList(taskList, removeBtn);
- */

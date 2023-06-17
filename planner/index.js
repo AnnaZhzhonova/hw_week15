@@ -79,3 +79,8 @@ function cleanList(parent, btn) {
   }
 }
 cleanList(taskList, removeBtn);
+
+removeBtn.addEventListener("click", () => {
+  taskList.innerHTML = null;
+  taskList.append(notification);
+});

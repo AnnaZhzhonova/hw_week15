@@ -41,6 +41,7 @@ function createTask(parent, checkbox, text) {
   const newItem = createTaskItem(parent, checkbox);
   const newCheckbox = createItemCheckbox(newItem);
   const newText = createItemText(newItem, text);
+  changeStatus(newCheckbox, newText);
   taskForm.reset();
 }
 
@@ -51,7 +52,16 @@ function addNewTask(parent, checkbox, text) {
     createTask(parent, checkbox, clearInputValue);
   }
 }
-
+//чекбокс для таски
+function changeStatus(checkbox, text) {
+  checkbox.addEventListener("click", () => {
+    if (checkbox.checked) {
+      text.classList.add("done");
+    } else {
+      text.classList.remove("done");
+    }
+  });
+}
 //работа кнопки
 taskBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -59,9 +69,10 @@ taskBtn.addEventListener("click", (event) => {
 });
 
 //Кнопка очистки
-function cleanList(parent, btn) {
+/* function cleanList(parent, btn) {
   if (parent.innerHTML) {
     btn.setAttribute("disabled");
   }
 }
 cleanList(taskList, removeBtn);
+ */

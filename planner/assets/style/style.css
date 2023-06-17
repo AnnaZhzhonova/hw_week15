@@ -59,8 +59,7 @@ body {
 .task-list {
   list-style-type: none;
   margin: 0 auto;
-  padding: 0 10px;
-  width: 90%;
+  padding: 0;
 }
 
 .task-list__item,
@@ -76,6 +75,10 @@ body {
 }
 .task-list__text {
   padding: 0 20px;
+}
+.done {
+  color: #b6bdd0;
+  text-decoration: line-through;
 }
 .remove-btn {
   height: 30px;

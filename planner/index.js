@@ -46,6 +46,7 @@ function createTask(parent, checkbox, text) {
   const newText = createItemText(newItem, text);
   changeStatus(newCheckbox, newText);
   items.push(newItem.textContent);
+
   taskForm.reset();
 }
 //чекбокс для таски
@@ -64,15 +65,15 @@ function addNewTask(parent, checkbox, text) {
 
   if (clearInputValue) {
     createTask(parent, checkbox, clearInputValue);
+    notification.remove();
+    removeBtn.disabled = false;
   }
-  notification.remove();
 }
 
 //работа кнопки add
 taskBtn.addEventListener("click", (event) => {
   event.preventDefault();
   addNewTask(taskList, taskCheckbox, newTask.value);
-  removeBtn.disabled = false;
 });
 
 //работа кнопки очистить список

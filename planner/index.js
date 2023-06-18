@@ -5,7 +5,8 @@ const taskCheckbox = document.querySelector(".form-checkbox");
 const taskList = document.querySelector(".task-list");
 const removeBtn = document.querySelector(".remove-btn");
 const notification = document.querySelector(".notification");
-
+//массив для задач
+const items = [];
 //проверить срочность
 function checkUrgency(checkbox, item) {
   if (checkbox.checked) {
@@ -37,7 +38,6 @@ function createItemText(parent, text) {
   parent.append(itemText);
   return itemText;
 }
-const items = [];
 
 //отрисовать задачу
 function createTask(parent, checkbox, text) {
@@ -47,15 +47,6 @@ function createTask(parent, checkbox, text) {
   changeStatus(newCheckbox, newText);
   items.push(newItem.textContent);
   taskForm.reset();
-}
-
-function addNewTask(parent, checkbox, text) {
-  const clearInputValue = text.trim();
-
-  if (clearInputValue) {
-    createTask(parent, checkbox, clearInputValue);
-  }
-  notification.remove();
 }
 //чекбокс для таски
 function changeStatus(checkbox, text) {
@@ -67,24 +58,28 @@ function changeStatus(checkbox, text) {
     }
   });
 }
+//добавить задачу в лист
+function addNewTask(parent, checkbox, text) {
+  const clearInputValue = text.trim();
+
+  if (clearInputValue) {
+    createTask(parent, checkbox, clearInputValue);
+  }
+  notification.remove();
+}
 
 //работа кнопки add
 taskBtn.addEventListener("click", (event) => {
   event.preventDefault();
   addNewTask(taskList, taskCheckbox, newTask.value);
+  updateClearListBtn(items, removeBtn);
+  removeBtn.disabled = false;
 });
-
-//функуия очистить список
-function cleanList(arr, btn) {
-  if (arr.length > 0) {
-    btn.removeAttribute("disabled");
-  }
-  return btn;
-}
 
 //работа кнопки очистить список
 removeBtn.addEventListener("click", () => {
-  cleanList(items, removeBtn);
   taskList.innerHTML = null;
+  updateClearListBtn(items, removeBtn);
   taskList.append(notification);
+  removeBtn.disabled = true;
 });

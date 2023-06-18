@@ -72,14 +72,12 @@ function addNewTask(parent, checkbox, text) {
 taskBtn.addEventListener("click", (event) => {
   event.preventDefault();
   addNewTask(taskList, taskCheckbox, newTask.value);
-  updateClearListBtn(items, removeBtn);
   removeBtn.disabled = false;
 });
 
 //работа кнопки очистить список
 removeBtn.addEventListener("click", () => {
   taskList.innerHTML = null;
-  updateClearListBtn(items, removeBtn);
-  taskList.append(notification);
   removeBtn.disabled = true;
+  taskList.append(notification);
 });

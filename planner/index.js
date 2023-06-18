@@ -37,12 +37,15 @@ function createItemText(parent, text) {
   parent.append(itemText);
   return itemText;
 }
+const items = [];
+
 //отрисовать задачу
 function createTask(parent, checkbox, text) {
   const newItem = createTaskItem(parent, checkbox);
   const newCheckbox = createItemCheckbox(newItem);
   const newText = createItemText(newItem, text);
   changeStatus(newCheckbox, newText);
+  items.push(newItem.textContent);
   taskForm.reset();
 }
 
@@ -64,23 +67,24 @@ function changeStatus(checkbox, text) {
     }
   });
 }
-//работа кнопки
+
+//работа кнопки add
 taskBtn.addEventListener("click", (event) => {
   event.preventDefault();
   addNewTask(taskList, taskCheckbox, newTask.value);
 });
 
-//Кнопка очистки
-function cleanList(parent, btn) {
-  if (!parent.innerHTML) {
-    btn.setAttribute("disabled", "disabled");
-  } else {
-    btn;
+//функуия очистить список
+function cleanList(arr, btn) {
+  if (arr.length > 0) {
+    btn.removeAttribute("disabled");
   }
+  return btn;
 }
-cleanList(taskList, removeBtn);
 
+//работа кнопки очистить список
 removeBtn.addEventListener("click", () => {
+  cleanList(items, removeBtn);
   taskList.innerHTML = null;
   taskList.append(notification);
 });

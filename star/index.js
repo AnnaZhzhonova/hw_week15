@@ -16,5 +16,11 @@ for (let i = 0; i < numbers.length; i++) {
 numbers.sort((a, b) => b - a);
 
 //Удалите повторяющиеся числа из массива
+let uniqueNumbers = [];
+for (let i = 0; i < numbers.length; i++) {
+  if (!uniqueNumbers.includes(numbers[i])) {
+    uniqueNumbers.push(numbers[i]);
+  }
+}
 
-console.log(numbers);
+console.log(uniqueNumbers);
